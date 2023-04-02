@@ -1,0 +1,24 @@
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100px;
+    // 两个--开始的有效标识符为自定义属性名
+    // var获取自定义属性的值
+    border-top: solid 1px var(--adm-border-color);
+    // 声明全局规则
+    :global(.adm-badge-wrap) {
+      margin-bottom: 40px;
+    }
+    :global(.adm-tab-bar-item-title-with-icon) {
+      margin-top: 35px;
+      font-size: 10px;
+    }
+  }
+}
