@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 // import { v4 as uuidv4 } from 'uuid';
 import useUserStore from '@/store/useUserStore';
 
-const useInput = () => {
+const useInput = (file: File | undefined) => {
   const [localUrl, setLocalUrl] = useState<string>('');
   const [type, setType] = useState<string>('');
   const imgRef = useRef<HTMLImageElement | null>(null);
@@ -13,20 +13,27 @@ const useInput = () => {
   // 图片最大size为1MB
   const imgMaxSize = 1024 * 1024;
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // 得到file对象
-    const files = event.target.files;
-    if (files && files?.length) {
-      // setFile(files[0]);
-      const file = files[0];
+  useEffect(() => {
+    if (file) {
       const quality = file.size > imgMaxSize ? 0.2 : 1;
-      fileToBase64(files[0], quality);
+      fileToBase64(file, quality);
     }
-  };
+  }, [file]);
+
+  // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   // 得到file对象
+  //   const files = event.target.files;
+  //   if (files && files?.length) {
+  //     // setFile(files[0]);
+  //     const file = files[0];
+  //     const quality = file.size > imgMaxSize ? 0.2 : 1;
+  //     fileToBase64(files[0], quality);
+  //   }
+  // };
 
   useEffect(() => {
     if (imgRef.current) {
-      console.log('localUrl update', localUrl);
+      console.log('localUrl update');
       imgRef.current.src = localUrl;
     }
   }, [localUrl]);
@@ -64,10 +71,11 @@ const useInput = () => {
   };
 
   const handlePost = useCallback(
-    async (localUrl: string, type: string) => {
+    // async (localUrl: string, type: string) => {
+    async () => {
       // dataURL——解析——得到二进制
       console.log('handlePost-localUrl', localUrl);
-      const bytes = window.atob(localUrl).split(',')[1]; // 解码base64
+      const bytes = window.atob(localUrl.split(',')[1]); // 解码base64
       console.log('handlePost-bytes', bytes);
       const arrayBuffer = new ArrayBuffer(bytes.length);
       const unit8Array = new Uint8Array(arrayBuffer); // 8位无符号整数，0-255
@@ -76,7 +84,7 @@ const useInput = () => {
       }
       const blob = new Blob([unit8Array], { type: type });
       // 利用FormData进行上传
-      const fileName = user?._id + '.' + type.split('/');
+      const fileName = user?._id + '.' + type.split('/')[1];
       const formData = new FormData();
       formData.append('type', type);
       formData.append('size', String(blob.size));
@@ -88,21 +96,44 @@ const useInput = () => {
     },
     [type, localUrl],
   );
+  // const handlePost = async () => {
+  //   // dataURL——解析——得到二进制
+  //   console.log('handlePost-localUrl', localUrl);
+  //   const bytes = window.atob(localUrl.split(',')[1]); // 解码base64
+  //   console.log('handlePost-bytes', bytes);
+  //   const arrayBuffer = new ArrayBuffer(bytes.length);
+  //   const unit8Array = new Uint8Array(arrayBuffer); // 8位无符号整数，0-255
+  //   for (let i = 0; i < bytes.length; i++) {
+  //     unit8Array[i] = bytes.charCodeAt(i); // 转为二进制
+  //   }
+  //   const blob = new Blob([unit8Array], { type: type });
+  //   // 利用FormData进行上传
+  //   const fileName = user?._id + '.' + type.split('/')[1];
+  //   const formData = new FormData();
+  //   formData.append('type', type);
+  //   formData.append('size', String(blob.size));
+  //   formData.append('name', fileName);
+  //   // formData.append() userName
+  //   formData.append('file', blob);
+  //   const res = await uploadImg(formData);
+  //   return res;
+  // };
 
-  const InputElement = () => {
-    return (
-      <div>
-        <input type="file" name="image" accept="image/*" onChange={handleInputChange} />
-        <img src="" alt="" ref={imgRef}></img>
-      </div>
-    );
-  };
+  // const InputElement = () => {
+  //   return (
+  //     <div>
+  //       <input type="file" name="image" accept="image/*" onChange={handleInputChange} />
+  //       <img src="" alt="" ref={imgRef}></img>
+  //     </div>
+  //   );
+  // };
 
   return {
-    localUrl,
-    type,
+    imgRef,
+    // localUrl,
+    // type,
     handlePost,
-    InputElement,
+    // InputElement,
   };
 };
 

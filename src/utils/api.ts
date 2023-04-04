@@ -3,6 +3,7 @@ export default {
   login: '/users/login',
   editProfile: 'users/editProfile',
   fetchUser: 'users/getUser',
+  uploadImg: 'users/uploadImg',
 
   getCode: '/code/generate',
   getCodeStatus: '/code/getStatus',
@@ -17,6 +18,4 @@ export default {
   remove: 'docs/remove',
 
   getStyles: 'styles',
-
-  uploadImg: 'uploadImg',
 };
