@@ -23,6 +23,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
+        // additionalData在每个less文件开头注入
         additionalData: `@import "${path.resolve(
           __dirname,
           'src/assets/style/global.module.less',
@@ -30,6 +31,7 @@ export default defineConfig({
         javascriptEnabled: true,
       },
     },
+    devSourcemap: true, // 开启css文件索引，以便于报错的时候能够找到源码位置
     postcss: {
       plugins: [
         postcsspxtoviewport({

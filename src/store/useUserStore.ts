@@ -38,6 +38,7 @@ interface UserStoreProps {
   // register: (payload: RegisterPayload) => Promise<boolean>;
   logout: () => void;
   // setQrcodeStatus: (qid: string | null, status: CodeStatus) => Promise<boolean>;
+  uploadImg: (formData: FormData) => Promise<boolean>;
 }
 
 // 创建 store
@@ -74,6 +75,20 @@ const useStore = create<UserStoreProps>()(
         logout: () => {
           set({ user: undefined, token: undefined });
           localStorage.clear();
+        },
+        // 上传头像
+        uploadImg: async (formData: FormData): Promise<boolean> => {
+          const id = get().user?._id;
+          const url = `${API.uploadImg}/${id}`;
+          const res = await useHttp<{ user: User }>(url, {
+            method: 'post',
+            data: formData,
+            headers: { 'Content-Type': 'multipart/form-data' },
+          });
+          if (!res) return false;
+          const { user } = res;
+          set({ user });
+          return true;
         },
       }),
       { name: STORE_STORAGE_KEY }, // storage name

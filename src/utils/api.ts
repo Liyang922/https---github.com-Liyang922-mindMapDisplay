@@ -17,4 +17,6 @@ export default {
   remove: 'docs/remove',
 
   getStyles: 'styles',
+
+  uploadImg: 'uploadImg',
 };
