@@ -80,13 +80,12 @@ const useStore = create<UserStoreProps>()(
         uploadImg: async (formData: FormData): Promise<boolean> => {
           const id = get().user?._id;
           const url = `${API.uploadImg}/${id}`;
-          const res = await useHttp<{ user: User }>(url, {
+          const user = await useHttp<User>(url, {
             method: 'post',
             data: formData,
             headers: { 'Content-Type': 'multipart/form-data' },
           });
-          if (!res) return false;
-          const { user } = res;
+          if (!user) return false;
           set({ user });
           return true;
         },

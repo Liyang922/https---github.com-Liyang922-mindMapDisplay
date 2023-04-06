@@ -1,5 +1,5 @@
 Arguments: 
-  E:\Node\node-v16.14.2-win-x64\node-v16.14.2-win-x64\node.exe E:\Node\node-v16.14.2-win-x64\node-v16.14.2-win-x64\node_modules\yarn\bin\yarn.js add @types/simple-mind-map
+  E:\Node\node-v16.14.2-win-x64\node-v16.14.2-win-x64\node.exe E:\Node\node-v16.14.2-win-x64\node-v16.14.2-win-x64\node_modules\yarn\bin\yarn.js add @types/uudi
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;E:\BlueWhale\env\Python3.6.8\Scripts;E:\BlueWhale\env\Python3.6.8\;E:\MATLAB\R2018b\runtime\win64;E:\MATLAB\R2018b\bin;C:\Program Files\Git\cmd;E:\Node\node-v16.14.2-win-x64\node-v16.14.2-win-x64;;E:\PDFtk Server\bin\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;E:\Redis\;C:\Users\18813\AppData\Local\Microsoft\WindowsApps;E:\Microsoft VS Code\bin;E:\Redis;E:\mongosh\bin;E:\MongoDB\Server\6.0\bin;
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.npm.taobao.org/@types%2fsimple-mind-map: Not found
+  Error: https://registry.npm.taobao.org/@types%2fuudi: Not found
       at Request.params.callback [as _callback] (E:\Node\node-v16.14.2-win-x64\node-v16.14.2-win-x64\node_modules\yarn\lib\cli.js:66145:18)
       at Request.self.callback (E:\Node\node-v16.14.2-win-x64\node-v16.14.2-win-x64\node_modules\yarn\lib\cli.js:140890:22)
       at Request.emit (node:events:526:28)
@@ -45,8 +45,8 @@ npm manifest:
       "@types/d3-shape": "^3.1.1",
       "@types/d3-zoom": "^3.0.2",
       "@types/js-md5": "^0.7.0",
-      "ahooks": "^3.7.4",
-      "antd-mobile": "^5.28.0",
+      "@types/uuid": "^9.0.1",
+      "antd-mobile": "^5.28.1",
       "axios": "^1.3.4",
       "d3-hierarchy": "^3.1.2",
       "d3-selection": "^3.0.0",
@@ -55,12 +55,12 @@ npm manifest:
       "js-md5": "^0.7.3",
       "less": "^4.1.3",
       "path": "^0.12.7",
+      "postcss-px-to-viewport": "^1.1.1",
       "react": "^17.0.2",
       "react-dom": "^17.0.2",
-      "react-error-boundary": "^3.1.4",
       "react-router-dom": "^6.8.1",
-      "react-simple-mind": "^0.0.3",
       "simple-mind-map": "^0.4.2",
+      "ts-mind": "^1.0.3",
       "vite-plugin-svg-icons": "^2.0.0",
       "zustand": "^4.3.3"
     },
@@ -376,17 +376,17 @@ Lockfile:
       minimatch "^3.0.4"
       strip-json-comments "^3.1.1"
   
-  "@floating-ui/core@^1.2.1":
-    version "1.2.1"
-    resolved "https://registry.npmmirror.com/@floating-ui/core/-/core-1.2.1.tgz#074182a1d277f94569c50a6b456e62585d463c8e"
-    integrity sha512-LSqwPZkK3rYfD7GKoIeExXOyYx6Q1O4iqZWwIehDNuv3Dv425FIAE8PRwtAx1imEolFTHgBEcoFHm9MDnYgPCg==
+  "@floating-ui/core@^1.2.2":
+    version "1.2.2"
+    resolved "https://registry.npmmirror.com/@floating-ui/core/-/core-1.2.2.tgz#66f62cf1b7de2ed23a09c101808536e68caffaec"
+    integrity sha512-FaO9KVLFnxknZaGWGmNtjD2CVFuc0u4yeGEofoyXO2wgRA7fLtkngT6UB0vtWQWuhH3iMTZZ/Y89CMeyGfn8pA==
   
   "@floating-ui/dom@^1.0.6":
-    version "1.2.1"
-    resolved "https://registry.npmmirror.com/@floating-ui/dom/-/dom-1.2.1.tgz#8f93906e1a3b9f606ce78afb058e874344dcbe07"
-    integrity sha512-Rt45SmRiV8eU+xXSB9t0uMYiQ/ZWGE/jumse2o3i5RGlyvcbqOF4q+1qBnzLE2kZ5JGhq0iMkcGXUKbFe7MpTA==
+    version "1.2.3"
+    resolved "https://registry.npmmirror.com/@floating-ui/dom/-/dom-1.2.3.tgz#8dc6fbf799fbb5c29f705b54bdd51f3ab0ee03a2"
+    integrity sha512-lK9cZUrHSJLMVAdCvDqs6Ug8gr0wmqksYiaoj/bxj2gweRQkSuhg2/V6Jswz2KiQ0RAULbqw1oQDJIMpQ5GfGA==
     dependencies:
-      "@floating-ui/core" "^1.2.1"
+      "@floating-ui/core" "^1.2.2"
   
   "@humanwhocodes/config-array@^0.9.2":
     version "0.9.3"
@@ -506,7 +506,7 @@ Lockfile:
     resolved "https://registry.npmmirror.com/@react-spring/types/-/types-9.6.1.tgz#913d3a68c5cbc1124fdb18eff919432f7b6abdde"
     integrity sha512-POu8Mk0hIU3lRXB3bGIGe4VHIwwDsQyoD1F394OK7STTiX9w4dG3cTLljjYswkQN+hDSHRrj4O36kuVa7KPU8Q==
   
-  "@react-spring/web@^9.5.5":
+  "@react-spring/web@~9.6.0":
     version "9.6.1"
     resolved "https://registry.npmmirror.com/@react-spring/web/-/web-9.6.1.tgz#3e4c03b724d2b545dc2fa2649eb6109318ab9178"
     integrity sha512-X2zR6q2Z+FjsWfGAmAXlQaoUHbPmfuCaXpuM6TcwXPpLE1ZD4A1eys/wpXboFQmDkjnrlTmKvpVna1MjWpZ5Hw==
@@ -644,6 +644,11 @@ Lockfile:
     dependencies:
       "@types/node" "*"
   
+  "@types/uuid@^9.0.1":
+    version "9.0.1"
+    resolved "https://registry.npmmirror.com/@types/uuid/-/uuid-9.0.1.tgz#98586dc36aee8dacc98cc396dbca8d0429647aa6"
+    integrity sha512-rFT3ak0/2trgvp4yYZo5iKFEPsET7vKydKF+VRCxlQ9bpheehyAJH89dAkaLEq/j/RZXJIqcgsmPJKUP1Z28HA==
+  
   "@typescript-eslint/eslint-plugin@^5.10.2":
     version "5.10.2"
     resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.10.2.tgz"
@@ -765,10 +770,10 @@ Lockfile:
     resolved "https://registry.npmmirror.com/ahooks-v3-count/-/ahooks-v3-count-1.0.0.tgz#ddeb392e009ad6e748905b3cbf63a9fd8262ca80"
     integrity sha512-V7uUvAwnimu6eh/PED4mCDjE7tokeZQLKlxg9lCTMPhN+NjsSbtdacByVlR1oluXQzD3MOw55wylDmQo4+S9ZQ==
   
-  ahooks@^3.7.2, ahooks@^3.7.4:
-    version "3.7.4"
-    resolved "https://registry.npmmirror.com/ahooks/-/ahooks-3.7.4.tgz#25e76a989da324a855eb75758b789ab0644b7a59"
-    integrity sha512-hvgdqzPUKXn95mK3cGlDCi/ZZqv+FRibCUCFT8zW3hCwLGvixVfnHrIW2/2lgzPdLo8mLjp/XOdIJvcPvE2lgQ==
+  ahooks@^3.7.2:
+    version "3.7.5"
+    resolved "https://registry.npmmirror.com/ahooks/-/ahooks-3.7.5.tgz#fe450bbe1b25edaa5915363583abc32845245a92"
+    integrity sha512-RWkJYK5xj9ZXROj9jABRDqdpTBimkY1tlyeJQ8Ci7MAl1sC5xzSzwO20ydk6BjtdbWt56DPCYZhq4lGu3O2Zwg==
     dependencies:
       "@types/js-cookie" "^2.x.x"
       ahooks-v3-count "^1.0.0"
@@ -829,14 +834,14 @@ Lockfile:
     resolved "https://registry.npmmirror.com/antd-mobile-v5-count/-/antd-mobile-v5-count-1.0.1.tgz#85f20c46d1635c24e856bcf5ad55e8c98e44a523"
     integrity sha512-YGsiEDCPUDz3SzfXi6gLZn/HpeSMW+jgPc4qiYUr1fSopg3hkUie2TnooJdExgfiETHefH3Ggs58He0OVfegLA==
   
-  antd-mobile@^5.28.0:
-    version "5.28.0"
-    resolved "https://registry.npmmirror.com/antd-mobile/-/antd-mobile-5.28.0.tgz#4ac24da028abb32c4d87bb5fc86439c62843a9de"
-    integrity sha512-QRREY3476K3ulWvLla5/quYsXDdJTNU2WR3BbF8gAPU/lZeIR92q+CEMDNIAntB1ww87uERqPJCQBKqN2SqmVA==
+  antd-mobile@^5.28.1:
+    version "5.28.1"
+    resolved "https://registry.npmmirror.com/antd-mobile/-/antd-mobile-5.28.1.tgz#7169141af735543843d4b0831561d057cdef5876"
+    integrity sha512-TFhwLstHig8HoJ34DiBelM2h7md0xn+VR54CVCZfm3nQ+LQEHaHOB6oJRHSMdm67kR8G8MyU618qeF+gK9JKxw==
     dependencies:
       "@floating-ui/dom" "^1.0.6"
       "@rc-component/mini-decimal" "^1.0.1"
-      "@react-spring/web" "^9.5.5"
+      "@react-spring/web" "~9.6.0"
       "@use-gesture/react" "10.2.20"
       ahooks "^3.7.2"
       antd-mobile-icons "^0.3.0"
@@ -1137,7 +1142,7 @@ Lockfile:
       isobject "^3.0.0"
       static-extend "^0.1.1"
   
-  classnames@^2.3.1, classnames@^2.3.2:
+  classnames@^2.3.2:
     version "2.3.2"
     resolved "https://registry.npmmirror.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
     integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
@@ -3072,7 +3077,7 @@ Lockfile:
     dependencies:
       boolbase "^1.0.0"
   
-  object-assign@^4, object-assign@^4.1.0, object-assign@^4.1.1:
+  object-assign@>=4.0.1, object-assign@^4, object-assign@^4.1.0, object-assign@^4.1.1:
     version "4.1.1"
     resolved "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
     integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
@@ -3301,6 +3306,23 @@ Lockfile:
     resolved "https://registry.npmmirror.com/postcss-prefix-selector/-/postcss-prefix-selector-1.16.0.tgz#ad5b56f9a73a2c090ca7161049632c9d89bcb404"
     integrity sha512-rdVMIi7Q4B0XbXqNUEI+Z4E+pueiu/CS5E6vRCQommzdQ/sgsS4dK42U7GX8oJR+TJOtT+Qv3GkNo6iijUMp3Q==
   
+  postcss-px-to-viewport@^1.1.1:
+    version "1.1.1"
+    resolved "https://registry.npmmirror.com/postcss-px-to-viewport/-/postcss-px-to-viewport-1.1.1.tgz#a25ca410b553c9892cc8b525cc710da47bf1aa55"
+    integrity sha512-2x9oGnBms+e0cYtBJOZdlwrFg/mLR4P1g2IFu7jYKvnqnH/HLhoKyareW2Q/x4sg0BgklHlP1qeWo2oCyPm8FQ==
+    dependencies:
+      object-assign ">=4.0.1"
+      postcss ">=5.0.2"
+  
+  postcss@>=5.0.2, postcss@^8.4.13:
+    version "8.4.21"
+    resolved "https://registry.npmmirror.com/postcss/-/postcss-8.4.21.tgz"
+    integrity sha512-tP7u/Sn/dVxK2NnruI4H9BG+x+Wxz6oeZ1cJ8P6G/PZY0IKk4k/63TDsQf2kQq3+qoJeLm2kIBUNlZe3zgb4Zg==
+    dependencies:
+      nanoid "^3.3.4"
+      picocolors "^1.0.0"
+      source-map-js "^1.0.2"
+  
   postcss@^5.2.17:
     version "5.2.18"
     resolved "https://registry.npmmirror.com/postcss/-/postcss-5.2.18.tgz#badfa1497d46244f6390f58b319830d9107853c5"
@@ -3310,15 +3332,6 @@ Lockfile:
       js-base64 "^2.1.9"
       source-map "^0.5.6"
       supports-color "^3.2.3"
-  
-  postcss@^8.4.13:
-    version "8.4.21"
-    resolved "https://registry.npmmirror.com/postcss/-/postcss-8.4.21.tgz"
-    integrity sha512-tP7u/Sn/dVxK2NnruI4H9BG+x+Wxz6oeZ1cJ8P6G/PZY0IKk4k/63TDsQf2kQq3+qoJeLm2kIBUNlZe3zgb4Zg==
-    dependencies:
-      nanoid "^3.3.4"
-      picocolors "^1.0.0"
-      source-map-js "^1.0.2"
   
   posthtml-parser@^0.2.0, posthtml-parser@^0.2.1:
     version "0.2.1"
@@ -3490,21 +3503,6 @@ Lockfile:
       object-assign "^4.1.1"
       scheduler "^0.20.2"
   
-  react-dom@^18.0.0:
-    version "18.2.0"
-    resolved "https://registry.npmmirror.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
-    integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
-    dependencies:
-      loose-envify "^1.1.0"
-      scheduler "^0.23.0"
-  
-  react-error-boundary@^3.1.4:
-    version "3.1.4"
-    resolved "https://registry.npmmirror.com/react-error-boundary/-/react-error-boundary-3.1.4.tgz"
-    integrity sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==
-    dependencies:
-      "@babel/runtime" "^7.12.5"
-  
   react-is@^16.12.0, react-is@^16.13.1:
     version "16.13.1"
     resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -3535,15 +3533,6 @@ Lockfile:
     dependencies:
       "@remix-run/router" "1.3.2"
   
-  react-simple-mind@^0.0.3:
-    version "0.0.3"
-    resolved "https://registry.npmmirror.com/react-simple-mind/-/react-simple-mind-0.0.3.tgz#5a4fe6aa6864dfa85135073d7ff4472a26253a84"
-    integrity sha512-w03dvecoyJilciDhqgTwllgzBJZkeBQWje6a2pUN7yZilzUrN95A2iy1UQKhI1UtTz++qSy+8PmPSctoNf1NgQ==
-    dependencies:
-      classnames "^2.3.1"
-      react "^18.0.0"
-      react-dom "^18.0.0"
-  
   react@^17.0.2:
     version "17.0.2"
     resolved "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
@@ -3551,13 +3540,6 @@ Lockfile:
     dependencies:
       loose-envify "^1.1.0"
       object-assign "^4.1.1"
-  
-  react@^18.0.0:
-    version "18.2.0"
-    resolved "https://registry.npmmirror.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
-    integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
-    dependencies:
-      loose-envify "^1.1.0"
   
   readable-stream@^2.2.2:
     version "2.3.7"
@@ -3760,13 +3742,6 @@ Lockfile:
     dependencies:
       loose-envify "^1.1.0"
       object-assign "^4.1.1"
-  
-  scheduler@^0.23.0:
-    version "0.23.0"
-    resolved "https://registry.npmmirror.com/scheduler/-/scheduler-0.23.0.tgz#ba8041afc3d30eb206a487b6b384002e4e61fdfe"
-    integrity sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==
-    dependencies:
-      loose-envify "^1.1.0"
   
   screenfull@^5.0.0:
     version "5.2.0"
@@ -4151,6 +4126,11 @@ Lockfile:
     version "0.6.7"
     resolved "https://registry.npmmirror.com/traverse/-/traverse-0.6.7.tgz#46961cd2d57dd8706c36664acde06a248f1173fe"
     integrity sha512-/y956gpUo9ZNCb99YjxG7OaslxZWHfCHAUUfshwqOXmxUIvqLjVO581BT+gM59+QV9tFe6/CGG53tsA1Y7RSdg==
+  
+  ts-mind@^1.0.3:
+    version "1.0.3"
+    resolved "https://registry.npmmirror.com/ts-mind/-/ts-mind-1.0.3.tgz#5755cec0cef576919a3025e4c596d112891164eb"
+    integrity sha512-0ZuxFw5gnhZ2aFytYrEabavdlgSG24MkesK/3B1QBEIVju1VeNkTv+B3WSLbhbKSOcxFCxMZoFreVuUD0WgYOw==
   
   tsconfig-paths@^3.12.0:
     version "3.12.0"
