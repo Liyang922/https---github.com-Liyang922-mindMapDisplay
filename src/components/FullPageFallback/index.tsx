@@ -13,7 +13,7 @@ export const FullPageLoading = () => (
 );
 
 type ErrorNull = { error: Error | null };
-export const FullPageError = (error : ErrorNull) => <ErrorBlock fullPage />;
+export const FullPageError = (error: ErrorNull) => <ErrorBlock fullPage />;
 
 export const FullPageEmpty = ({ message = '暂无数据' }) => (
   <div className={`${styles.centerContent} ${styles.empty}`}>

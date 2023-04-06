@@ -19,7 +19,7 @@
     "types": ["vite-plugin-svg-icons/client"],
     "paths": {
       "@/*": ["src/*"],
-      "*": ["@types/*"],
+      "*": ["@types/*"]
     }
   },
   "include": ["src/", "vite.config.ts", "types/"],
